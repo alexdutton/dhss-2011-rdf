@@ -88,7 +88,7 @@ We explore practical considerations in representing information as RDF.,
  the RDF you create.
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Linked and linkable data
 \end_layout
 
@@ -201,7 +201,7 @@ Linkable
 data is data that uses dereferenceable URIs to identify concepts.
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Choosing vocabularies
 \end_layout
 
@@ -316,7 +316,7 @@ You should use whichever makes most sense within your domain.
  of consumers.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Useful ontologies and vocabularies
 \end_layout
 
@@ -370,22 +370,75 @@ Data
 \begin_inset space ~
 \end_inset
 
-Cube
+Cube Used as a framework for modelling statistical data.
+ Extend with concepts relevant to your domain.
 \end_layout
 
 \begin_layout Description
-SKOS
+Simple
+\begin_inset space ~
+\end_inset
+
+Knowledge
+\begin_inset space ~
+\end_inset
+
+Organization
+\begin_inset space ~
+\end_inset
+
+System
+\begin_inset space ~
+\end_inset
+
+(SKOS)
 \end_layout
 
 \begin_layout Description
-SIOC
+Semantically-Interlinked
+\begin_inset space ~
+\end_inset
+
+Online
+\begin_inset space ~
+\end_inset
+
+Communities
+\begin_inset space ~
+\end_inset
+
+(SIOC,
+\begin_inset space ~
+\end_inset
+
+pronounced
+\begin_inset space ~
+\end_inset
+
+'shock')
 \end_layout
 
 \begin_layout Description
-VoID
+Vocabulary
+\begin_inset space ~
+\end_inset
+
+of
+\begin_inset space ~
+\end_inset
+
+Interlinked
+\begin_inset space ~
+\end_inset
+
+Datasets
+\begin_inset space ~
+\end_inset
+
+(VoID)
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Serializing RDF
 \end_layout
 
@@ -437,7 +490,7 @@ target "http://www.w3.org/DesignIssues/Notation3"
 RDF is a data model, which can be serialized in various ways.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 RDF/XML
 \end_layout
 
@@ -578,7 +631,7 @@ target "http://www.w3.org/2001/10/stripes/"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Turtle and related syntaxes
 \end_layout
 
