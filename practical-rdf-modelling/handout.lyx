@@ -487,7 +487,39 @@ target "http://www.w3.org/DesignIssues/Notation3"
 
 \end_inset
 
-RDF is a data model, which can be serialized in various ways.
+RDF is a data model, which can be serialized in various ways:
+\end_layout
+
+\begin_layout Description
+RDF/XML An XML-based serialization.
+ Useful when transforming data with XSLT.
+\end_layout
+
+\begin_layout Description
+Turtle A triple-based syntax with abbreviations for anonymous blank nodes,
+ repeated subjects and predicates, and prefixes.
+ Relatively easy to read once one gets the hang of it.
+ A nightmare to write a parser for.
+\end_layout
+
+\begin_layout Description
+Notation3 A superset of Turtle, with support for expressing concepts from
+ first-order logic.
+ You'll probably never come across a Notation3 document that isn't also
+ a Turtle document, and as such you probably don't need to worry about it.
+\end_layout
+
+\begin_layout Description
+N-Triples A subset of Turtle, without prefix declarations and repeated term
+ abbreviations.
+ Each line contains three Turtle-formatted terms followed by a full-stop.
+\end_layout
+
+\begin_layout Description
+TriX Like N-Triples, but as an XML dialect.
+ Simple format for generating using tools.
+ However, it's trivial to turn generate RDF/XML in place of a TriX document,
+ so you probably don't need to use it, just be aware that it exists.
 \end_layout
 
 \begin_layout Subsection
@@ -615,40 +647,166 @@ target "http://www.w3.org/2001/10/stripes/"
 
 \end_layout
 
+\begin_layout Standard
+In plain English, the above snippet reads 
+\begin_inset Quotes eld
+\end_inset
+
+Tim Berners Lee is a Person; his name is 'Tim Berners-Lee'; he is based
+ near a point whose latitute is 42.36 and whose longitude is -71.09; and he
+ is the same concept refered to by a particular concept at DBpedia.
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The outer-most 
+\family typewriter
+rdf:RDF
+\family default
+ element contains a list of descriptions of concepts.
+ A description element may have an 
+\family typewriter
+@rdf:about
+\family default
+ attribute which contains the URI reference for the concept being described.
+ Each description contains a series of properties (e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+<foaf:name>…</foaf:name>
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Each property either has an 
+\family typewriter
+@rdf:resource
+\family default
+ attribute, containing the URI reference for the object, or contains a further
+ description element.
+\end_layout
+
 \begin_layout Subsection
-Turtle and related syntaxes
+Turtle
 \end_layout
 
-\begin_layout Description
-RDF/XML An XML-based serialization.
- Useful when transforming data with XSLT.
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 \end_layout
 
-\begin_layout Description
-Turtle A triple-based syntax with abbreviations for anonymous blank nodes,
- repeated subjects and predicates, and prefixes.
- Relatively easy to read once one gets the hang of it.
- A nightmare to write a parser for.
+\begin_layout Plain Layout
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/">
 \end_layout
 
-\begin_layout Description
-Notation3 A superset of Turtle, with support for expressing concepts from
- first-order logic.
- You'll probably never come across a Notation3 document that isn't also
- a Turtle document, and as such you probably don't need to worry about it.
+\begin_layout Plain Layout
+
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#">
 \end_layout
 
-\begin_layout Description
-N-Triples A subset of Turtle, without prefix declarations and repeated term
- abbreviations.
- Each line contains three Turtle-formatted terms followed by a full-stop.
+\begin_layout Plain Layout
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#">
 \end_layout
 
-\begin_layout Description
-TriX Like N-Triples, but as an XML dialect.
- Simple format for generating using tools.
- However, it's trivial to turn generate RDF/XML in place of a TriX document,
- so you probably don't need to use it, just be aware that it exists.
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<http://www.w3.org/People/Berners-Lee/card#i> a foaf:Person ;
+\end_layout
+
+\begin_layout Plain Layout
+
+    foaf:name "Tim Berners-Lee"@en ;
+\end_layout
+
+\begin_layout Plain Layout
+
+    foaf:based_near [ a geo:Point ;
+\end_layout
+
+\begin_layout Plain Layout
+
+                      geo:lat 42.361860 ;
+\end_layout
+
+\begin_layout Plain Layout
+
+                      geo:long -71.091840 ] ;
+\end_layout
+
+\begin_layout Plain Layout
+
+    skos:exactMatch <http://dbpedia.org/resource/Tim_Berners-Lee> .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Turtle document starts with a set of prefix definitions, each using the
+ 
+\family typewriter
+@prefix
+\family default
+ keyword.
+ Prefixes can be used to create 
+\begin_inset Quotes eld
+\end_inset
+
+qualified names
+\begin_inset Quotes erd
+\end_inset
+
+, e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+foaf:name
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This is equivalent to the second part being appended to the namespace URI
+ (i.e.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+<http://xmlns.com/foaf/0.1/name>
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+A URI reference is enclosed in angle brackets.
+ Square brackets denote an abbreviated syntax for blank (anonymous) nodes.
 \end_layout
 
 \begin_layout Subsection
@@ -656,7 +814,7 @@ Conversion strategies
 \end_layout
 
 \begin_layout Standard
-
+g
 \end_layout
 
 \end_body
