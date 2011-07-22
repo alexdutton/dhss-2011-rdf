@@ -80,7 +80,7 @@ Alexander Dutton
 \end_layout
 
 \begin_layout Abstract
-We explore practical considerations in representing information as RDF.,
+We explore practical considerations in representing information as RDF.
  Topics covered include linked and linkable data, choosing and creating
  vocabularies, controlled vocabularies, serialization options, and tools
  for conversion.
@@ -509,99 +509,83 @@ status open
 
 \begin_layout Plain Layout
 
-\size footnotesize
 <rdf:RDF
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
   <foaf:Person rdf:about="http://www.w3.org/People/Berners-Lee/card#i">
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     <foaf:name xml:lang="en">Tim Berners-Lee</foaf:name>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     <foaf:based_near>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
       <geo:Point>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
         <geo:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.361860</g
 eo:lat>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
         <geo:long rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-71.091840<
 /geo:long>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
       </geo:Point>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     </foaf:based_near>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
     <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Tim_Berners-Lee"/>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
   </foaf:Person>
 \end_layout
 
 \begin_layout Plain Layout
 
-\size footnotesize
 </rdf:RDF>
 \end_layout
 
@@ -648,11 +632,31 @@ Turtle A triple-based syntax with abbreviations for anonymous blank nodes,
 \end_layout
 
 \begin_layout Description
-Notation3 A superset of Turtle, with 
+Notation3 A superset of Turtle, with support for expressing concepts from
+ first-order logic.
+ You'll probably never come across a Notation3 document that isn't also
+ a Turtle document, and as such you probably don't need to worry about it.
 \end_layout
 
 \begin_layout Description
-N-Triples
+N-Triples A subset of Turtle, without prefix declarations and repeated term
+ abbreviations.
+ Each line contains three Turtle-formatted terms followed by a full-stop.
+\end_layout
+
+\begin_layout Description
+TriX Like N-Triples, but as an XML dialect.
+ Simple format for generating using tools.
+ However, it's trivial to turn generate RDF/XML in place of a TriX document,
+ so you probably don't need to use it, just be aware that it exists.
+\end_layout
+
+\begin_layout Subsection
+Conversion strategies
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
