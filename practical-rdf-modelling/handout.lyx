@@ -323,14 +323,82 @@ Useful ontologies and vocabularies
 \begin_layout Description
 FOAF General-purpose vocabulary for describing people and groups.
  Widely used.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://xmlns.com/foaf/spec/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-FRBR
+Functional
+\begin_inset space ~
+\end_inset
+
+Requirements
+\begin_inset space ~
+\end_inset
+
+For
+\begin_inset space ~
+\end_inset
+
+Bibliographic
+\begin_inset space ~
+\end_inset
+
+Records
+\begin_inset space ~
+\end_inset
+
+(FRBR) Terms for the products of intellectual or artistic endeavor.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://vocab.org/frbr/core.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-VCard
+vCard Contact details (e-mail, phone, addresses).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/Submission/vcard-rdf/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -340,13 +408,57 @@ Organization
 
 ontology Event-based ontology for organisational structure, change events
  and memberships.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.epimorphics.com/public/vocabulary/org.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-DCTerms Successor to the DC Elements vocabulary.
- Terms for describing resources (e.g.
+DCMI
+\begin_inset space ~
+\end_inset
+
+Metadata
+\begin_inset space ~
+\end_inset
+
+Terms
+\begin_inset space ~
+\end_inset
+
+(DCTerms) Successor to the DC Elements vocabulary.
+ Terms for describing resources and documents (e.g.
  title, publication dates, creators, part/whole relationships).
- Widely used; useful co
+ Widely used and understood.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dublincore.org/documents/dcmi-terms/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -354,15 +466,72 @@ CIDOC
 \begin_inset space ~
 \end_inset
 
-CRM
+CRM Definitions and a formal structure for describing the implicit and explicit
+ concepts and relationships used in cultural heritage documentation.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.cidoc-crm.org/"
+
+\end_inset
+
+; 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://erlangen-crm.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-GEO
+GEO A simple vocabulary for describing points and geographic co-ordinates.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/2003/01/geo/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-OpenVocab
+OpenVocab A community-defined vocabulary for terms and concepts that don't
+ fit into other vocabularies.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://open.vocab.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -372,6 +541,22 @@ Data
 
 Cube Used as a framework for modelling statistical data.
  Extend with concepts relevant to your domain.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -391,7 +576,24 @@ System
 \begin_inset space ~
 \end_inset
 
-(SKOS)
+(SKOS) A common data model for sharing and linking knowledge organization
+ systems.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/skos-reference/skos.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -415,7 +617,23 @@ pronounced
 \begin_inset space ~
 \end_inset
 
-'shock')
+'shock') Used for describing 'Web 2.0'-style social media communities.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/skos-reference/skos.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -435,7 +653,23 @@ Datasets
 \begin_inset space ~
 \end_inset
 
-(VoID)
+(VoID) Vocabulary for providing metadata about RDF-based datasets.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/skos-reference/skos.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
