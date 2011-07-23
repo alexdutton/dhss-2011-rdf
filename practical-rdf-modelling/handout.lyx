@@ -89,13 +89,89 @@ We explore practical considerations in representing information as RDF.
 \end_layout
 
 \begin_layout Section
+Concepts
+\end_layout
+
+\begin_layout Subsection
+RDF
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0in
+width "40col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename media/rdf-example.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+An example RDF graph.
+ The green elipses represent URIs which in turn represent 'things'.
+ The orange rectangles are literals (in this case, textual strings).
+ The arrows are predicates and are identified by URIs.
+ From 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/rdf-syntax/"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+RDF is a data model; a way for organising information.
+ It is based around the concept of making 
+\series bold
+statements
+\series default
+, each containing a 
+\series bold
+subject
+\series default
+, a 
+\series bold
+predicate
+\series default
+, and an 
+\series bold
+object
+\series default
+.
+ A statement may also be referred to as a 
+\series bold
+triple
+\series default
+, as it contains three elements.
+\end_layout
+
+\begin_layout Subsection
 Linked and linkable data
 \end_layout
 
 \begin_layout Standard
-RDF is a data model; a way for organising information.
- RDF, by itself, does not provide standardised or interoperable way of expressin
-g common concepts, be they subjects (e.g.
+RDF, by itself, does not provide standardised or interoperable way of expressing
+ common concepts, be they subjects (e.g.
  
 \begin_inset Quotes eld
 \end_inset
