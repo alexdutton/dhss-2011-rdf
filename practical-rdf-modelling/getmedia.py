@@ -16,7 +16,7 @@ if __name__ == '__main__':
     for source, destination in MEDIA:
         destination = os.path.join(BASE, destination)
         request = urllib2.Request(source)
-        request.headers['User-agent'] = 'Mozilla (Python/urllib2; https://github.com/alexsdutton/dhss-2011-rdf'
+        request.headers['User-agent'] = 'Mozilla (Python/urllib2; https://github.com/alexsdutton/dhss-2011-rdf)'
         response = urllib2.urlopen(request)
         with open(destination, 'w') as f:
             for chunk in response:
