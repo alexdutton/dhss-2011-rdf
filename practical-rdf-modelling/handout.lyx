@@ -274,11 +274,16 @@ Linkable
 \begin_inset space ~
 \end_inset
 
-data is data that uses dereferenceable URIs to identify concepts.
+data is data that uses dereferenceable URIs to identify concepts or provide
+ metadata.
+\end_layout
+
+\begin_layout Standard
+Linked data need not be RDF, and RDF need not be linked data.
 \end_layout
 
 \begin_layout Section
-Choosing vocabularies
+Choosing and developing vocabularies
 \end_layout
 
 \begin_layout Standard
@@ -394,6 +399,36 @@ You should use whichever makes most sense within your domain.
 
 \begin_layout Subsection
 Useful ontologies and vocabularies
+\end_layout
+
+\begin_layout Description
+RDF
+\begin_inset space ~
+\end_inset
+
+Schema
+\begin_inset space ~
+\end_inset
+
+(RDFS) Provides basic elements for the description of vocabularies and terms
+ (e.g.
+ property ranges and domains, and sub-class and sub-property relationships).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/rdf-schema/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -748,6 +783,22 @@ target "http://www.w3.org/TR/skos-reference/skos.html"
 
 \end_layout
 
+\begin_layout Subsection
+Finding ontologies and vocabularies
+\end_layout
+
+\begin_layout Standard
+f
+\end_layout
+
+\begin_layout Subsection
+Creating ontologies and vocabularies
+\end_layout
+
+\begin_layout Standard
+f
+\end_layout
+
 \begin_layout Section
 Serializing RDF
 \end_layout
@@ -797,12 +848,30 @@ target "http://www.w3.org/DesignIssues/Notation3"
 
 \end_inset
 
-RDF is a data model, which can be serialized in various ways:
+RDF is a conceptual data model, which can be embodied through various standardis
+ed serialization methods.
+ The following are some of the more common syntaxes you might come across.
 \end_layout
 
 \begin_layout Description
 RDF/XML An XML-based serialization.
  Useful when transforming data with XSLT.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/rdf-syntax/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -810,6 +879,22 @@ Turtle A triple-based syntax with abbreviations for anonymous blank nodes,
  repeated subjects and predicates, and prefixes.
  Relatively easy to read once one gets the hang of it.
  A nightmare to write a parser for.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TeamSubmission/turtle/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -817,12 +902,44 @@ Notation3 A superset of Turtle, with support for expressing concepts from
  first-order logic.
  You'll probably never come across a Notation3 document that isn't also
  a Turtle document, and as such you probably don't need to worry about it.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/DesignIssues/Notation3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
 N-Triples A subset of Turtle, without prefix declarations and repeated term
  abbreviations.
  Each line contains three Turtle-formatted terms followed by a full-stop.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/2001/sw/RDFCore/ntriples/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -830,6 +947,22 @@ TriX Like N-Triples, but as an XML dialect.
  Simple format for generating using tools.
  However, it's trivial to turn generate RDF/XML in place of a TriX document,
  so you probably don't need to use it, just be aware that it exists.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sw.nokia.com/trix/trix.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -896,14 +1029,22 @@ status open
 
 \begin_layout Plain Layout
 
-        <geo:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.361860</g
-eo:lat>
+        <geo:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
 \end_layout
 
 \begin_layout Plain Layout
 
-        <geo:long rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-71.091840<
-/geo:long>
+            >42.361860</geo:lat>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <geo:long rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+\end_layout
+
+\begin_layout Plain Layout
+
+            >-71.091840</geo:long>
 \end_layout
 
 \begin_layout Plain Layout
