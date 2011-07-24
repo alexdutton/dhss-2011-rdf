@@ -97,18 +97,16 @@ RDF
 \end_layout
 
 \begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement o
-overhang 0in
-width "40col%"
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename media/rdf-example.png
 	lyxscale 40
-	scale 40
+	width 100col%
 
 \end_inset
 
@@ -138,8 +136,16 @@ target "http://www.w3.org/TR/rdf-syntax/"
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 RDF is a data model; a way for organising information.
  It is based around the concept of making 
 \series bold
@@ -661,18 +667,16 @@ Serializing RDF
 \end_layout
 
 \begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement o
-overhang 0in
-width "30col%"
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename media/serialization-venn.svg
 	lyxscale 20
-	scale 20
+	width 100col%
 
 \end_inset
 
@@ -692,7 +696,9 @@ target "http://www.w3.org/DesignIssues/Notation3"
 \end_inset
 
 )
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Features-of-RDF"
 
 \end_inset
 
@@ -701,9 +707,31 @@ target "http://www.w3.org/DesignIssues/Notation3"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 RDF is a conceptual data model, which can be embodied through various standardis
 ed serialization methods.
  The following are some of the more common syntaxes you might come across.
+ Each serialization format has its own set of features, a Venn diagram of
+ which is presented in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Features-of-RDF"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Description
@@ -820,6 +848,13 @@ target "http://sw.nokia.com/trix/trix.html"
 
 \begin_layout Subsection
 RDF/XML
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:RDF/XML"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1130,11 +1165,15 @@ For the purposes of writing down RDF terms, URIs are often enclosed in angle
 \family typewriter
 >
 \family default
-)
-\family typewriter
-, blank nodes are refered to using a leading underscore and colon (e.g.
- _:bnode), and literals are enclosed in double quotation marks (e.g.
+), blank nodes are refered to using a leading underscore and colon (e.g.
  
+\family typewriter
+_:bnode
+\family default
+), and literals are enclosed in double quotation marks (e.g.
+ 
+\family typewriter
+
 \begin_inset Quotes eld
 \end_inset
 
@@ -1142,8 +1181,68 @@ hello
 \begin_inset Quotes erd
 \end_inset
 
+
+\family default
 ).
- Literal datatypes are identified by URIs and 
+ Literal datatypes are identified by URIs and separated by ^^ (e.g.
+ 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+2011-02-28
+\begin_inset Quotes erd
+\end_inset
+
+^^date
+\family default
+).
+ Language tags are separated by an ampersand (e.g.
+ 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+A walk in the park
+\begin_inset Quotes erd
+\end_inset
+
+@en
+\family default
+).
+\end_layout
+
+\begin_layout Subsection
+Validating RDF
+\end_layout
+
+\begin_layout Standard
+There are a couple of services you can use to check that the RDF that you
+ generate is valid:
+\end_layout
+
+\begin_layout Itemize
+The W3C's RDF Validator at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/RDF/Validator/"
+
+\end_inset
+
+ (RDF/XML only)
+\end_layout
+
+\begin_layout Itemize
+The rdf:about validator at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.rdfabout.com/demo/validator/"
+
+\end_inset
+
+ (RDF/XML and Notation-3/Turtle)
 \end_layout
 
 \begin_layout Section
@@ -1190,19 +1289,17 @@ The Document class represents those things which are, broadly conceived,
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement o
-overhang 0in
-width "30col%"
-status collapsed
+\begin_layout Quotation
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename media/frbr.svg
 	lyxscale 20
-	scale 20
+	width 100col%
 
 \end_inset
 
@@ -1222,7 +1319,9 @@ target "http://en.wikipedia.org/wiki/File:FRBR-Group-1-entities-and-basic-relati
 \end_inset
 
 , CC-BY-SA)
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FRBR-object-model"
 
 \end_inset
 
@@ -1231,6 +1330,19 @@ target "http://en.wikipedia.org/wiki/File:FRBR-Group-1-entities-and-basic-relati
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 This is a simplistic approach that satisfies cases where any further distinction
  is considered unnecessary.
  At the other end of the scale is FRBR
@@ -1250,7 +1362,14 @@ target "http://vocab.org/frbr/core.html"
 \end_inset
 
  (Functional Requirements for Bibligraphic Records) which distinguishes
- between a work and its realizations and embodiments.
+ between a work and its realizations and embodiments (Figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:FRBR-object-model"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -1682,6 +1801,13 @@ target "http://www.w3.org/TR/skos-reference/skos.html"
 
 \begin_layout Subsection
 Finding ontologies and vocabularies
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Finding-ontologies-and"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1988,13 +2114,240 @@ hat:NapoleonsHat a hat:Hat ; # a named individual
 
 \end_layout
 
+\begin_layout Section
+Advice on creating ontologies and vocabularies
+\end_layout
+
 \begin_layout Subsection
-Creating ontologies and vocabularies
+Before you consider creating something new…
 \end_layout
 
 \begin_layout Standard
-If all else fails, you should consider extending an existing ontology, or
- creating a new one.
+If you think that your use-case has a home in someone else's ontology then
+ talk to them! Lots of ontologies have mailling lists or issue trackers.
+ You may also find that what you need has already been considered, and can
+ be expressed in some other way.
+ You should also make sure to ask around; your life will be a lot easier
+ if you find someone has been there before you.
+\end_layout
+
+\begin_layout Subsection
+Extending vocabularies
+\end_layout
+
+\begin_layout Standard
+You can extend a vocabulary by 'hooking in' terms using 
+\family typewriter
+rdfs:subClassOf
+\family default
+ and 
+\family typewriter
+rdfs:subPropertyOf
+\family default
+.
+ This is particularly useful when you need to create a specialisation of
+ a class defined by someone else.
+\end_layout
+
+\begin_layout Subsection
+Creating vocabularies
+\end_layout
+
+\begin_layout Standard
+When creating a vocabulary it is usually a good idea to consult other people
+ within the field.
+ This will generally turn up use-cases you hadn't previously thought of,
+ making your vocabulary more widely applicable.
+\end_layout
+
+\begin_layout Subsubsection
+Closed or public?
+\end_layout
+
+\begin_layout Standard
+There are two main reasons you're using RDF:
+\end_layout
+
+\begin_layout Itemize
+It's a means to an end.
+ You want to use RDF-based tools or need the schemaless or extensible model
+ that comes through using RDF.
+\end_layout
+
+\begin_layout Itemize
+You buy in to the linked data philosophy.
+ You want to publish your data and encourage its reuse.
+\end_layout
+
+\begin_layout Subsubsection
+Closed 
+\end_layout
+
+\begin_layout Standard
+In the first case, it doesn't really matter whether you use home-grown vocabular
+ies or not.
+ However, you should be aware of what's happening in the wider community,
+ and you may wish to migrate to other vocabularies as they start to cover
+ your domain (particularly if at some point you decide to publish your data).
+\end_layout
+
+\begin_layout Subsubsection
+Public
+\end_layout
+
+\begin_layout Quotation
+Also see 
+\begin_inset Quotes eld
+\end_inset
+
+Best Practice Recipes for Publishing RDF Vocabularies
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/swbp-vocab-pub/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the second case you should aim to be as interoperable as possible.
+ In an ideal world, public vocabularies should be treated like open-source
+ software.
+ You may wish to build a community — or at least, a group of interested
+ individuals — to maintain it in the longer term (maintanence would include
+ dealing with requests for enhancement as well as fixing errors).
+ You should also consider publicising your vocabulary on mailling lists
+ and aggregation sites (such as those listed in section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Finding-ontologies-and"
+
+\end_inset
+
+); without awareness other people are liable to create their own, leading
+ to a proliferation of competing vocabularies.
+\end_layout
+
+\begin_layout Standard
+To fit in with the linked data ethos, your terms should be dereferenceable.
+ That is, by visiting the resource identified by a URI one finds documentation,
+ be it human- or machine-readable (or both
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It's possible to use content negotiation (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://en.wikipedia.org/wiki/Content_negotiation"
+
+\end_inset
+
+) to differentiate between clients wanting machine-readable data (e.g.
+ RDF/XML), and those wanting something to display to humans (e.g.
+ HTML).
+ 
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+If your project has fixed-term funding and long-term hosting might be a
+ problem, you should consider creating your vocabulary's URIs using a permanent
+ URL service.
+ Such a service will allow you to configure redirects from stable URLs.
+ This will enable you to change your hosting arrangements without affecting
+ what is effectively your public interface.
+\end_layout
+
+\begin_layout Subsection
+Tools
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename media/protege.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Protégé-OWL editor
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Protégé-OWL-editor"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Protégé
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://protege.stanford.edu/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ — screenshot presented in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:The-Protégé-OWL-editor"
+
+\end_inset
+
+ — is a free, open source ontology editor and knowledge-base framework.
+ It provides a graphical interface for inspecting, creating and maintaining
+ ontologies, and can output as RDFS and various flavours of OWL.
 \end_layout
 
 \begin_layout Section
@@ -2002,7 +2355,263 @@ Conversion strategies
 \end_layout
 
 \begin_layout Standard
-g
+Oftentimes you won't be maintaining your raw data as RDF.
+ This may be because your dealing with legacy data stores, or simply because
+ it's easier
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+There is a lot to be said for maintaining your data in a relational database,
+ spreadsheets, or XML files.
+ These come with tools that people already understand.
+ Conversely, there exist few non-domain-specific tools that allow for easy
+ editing of RDF data.
+ The true benefit of RDF lies in it being a common model for the interchange
+ of data, and the querying power and expressability available through SPARQL.
+\end_layout
+
+\end_inset
+
+.
+ In these situations you will need to come up with a reproducable and sustainabl
+e way to transform your existing data into RDF.
+ Even if you're starting a project from scratch, you may prefer to use a
+ non-RDF-based system for maintaining your data.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+You should be aware of how you might transform your data when planning the
+ system.
+ It's much easier to do so at this stage than have to go back and re-edit
+ data later.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here we consider the various ways you might store your data, and how you
+ might go about turning it into RDF.
+\end_layout
+
+\begin_layout Subsection
+Starting with tabular data
+\end_layout
+
+\begin_layout Standard
+Spreadsheets, CSV files and relational databases are all forms of tabular
+ data.
+ In these cases you have two options; turn it into XML and transform that
+ using XSLT, or write a program to transform it directly.
+\end_layout
+
+\begin_layout Standard
+To turn tabular data into XML, you can use a service like OxGarage
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+OxGarage is an open-source web service for conversion between various spreadshee
+t, textual document, and presentation formats.
+ You can find more documentation at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.oucs.ox.ac.uk/oxgarage/"
+
+\end_inset
+
+, including on how to interact with it or install it locally.
+\end_layout
+
+\end_inset
+
+.
+ This supports CSV (
+\family typewriter
+.csv
+\family default
+), TSV (
+\family typewriter
+.tsv
+\family default
+), Excel (
+\family typewriter
+.xls
+\family default
+), Office Open XML Spreadsheet (
+\family typewriter
+.xlsx
+\family default
+), and OpenDocument Spreadsheet (
+\family typewriter
+.ods
+\family default
+) files.
+ The resultant file can be in anyone of these formats or — as we desire
+ — TEI XML.
+\end_layout
+
+\begin_layout Standard
+Writing a bespoke program to transform tabular data is probably overkill,
+ though might be worthwhile if there are other systems or APIs
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Application Programming Interfaces; services that can be queried and which
+ generally return structured data
+\end_layout
+
+\end_inset
+
+ (e.g.
+ look-up services) that need to be consulted in order to perform the transformat
+ion.
+ In these cases you may also wish to consider using a tool like Google Refine
+ (see section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Google-Refine"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+As an a further alternative, the University of Southampton use a tool called
+ Grinder
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/cgutteridge/Grinder"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ to turn tabular data into RDF.
+ It's possibly lacking a little in documentation at the moment, but it handles
+ pulling files from the web and then using a specified XSLT template to
+ perfomr the conversion into RDF/XML.
+ An example of the files they use to publish a dataset can be found under
+ the heading 
+\begin_inset Quotes eld
+\end_inset
+
+Other Files Used in the Publication Process
+\begin_inset Quotes erd
+\end_inset
+
+ at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.southampton.ac.uk/dataset/services.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Southampton also edit a lot of their data using Google Spreadsheets.
+ This allows non-technical users to maintain information in a familiar environme
+nt, which is then processed and published at regular intervals by their
+ infrastructure.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It should be pointed out that by using Google Spreadsheets they are not
+ 'trusting their data to the cloud'; rather they are using it as an editing
+ tool, with perfect copies downloaded and stored regularly.
+ This will allow them to continue maintaining their data unaffected if ever
+ Google Spreadsheets were to disappear.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Converting XML using XSLT
+\end_layout
+
+\begin_layout Standard
+XML is often best converted to RDF using XSLT
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Extensible Stylesheet Language Transformations
+\end_layout
+
+\end_inset
+
+, an XML-based language for transforming one XML into another.
+ In our case our target will be valid RDF/XML (as described in section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:RDF/XML"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Describing XSLT is out of the scope of this document, but you can find good
+ introductions in the following places:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.jenitennison.com/xslt/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.ibm.com/developerworks/xml/tutorials/x-introxslt/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Google Refine
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Google-Refine"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Google Refine describes itself as 'a power tool for working with messy data,
+ cleaning it up, transforming it from one format into another, extending
+ it with web services, and linking it to databases like Freebase'.
+ It also supports you in reconciling or co-referencing one dataset against
+ another.
 \end_layout
 
 \end_body

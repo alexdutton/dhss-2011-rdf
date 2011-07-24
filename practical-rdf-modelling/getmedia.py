@@ -5,6 +5,7 @@ MEDIA = [
     ('http://upload.wikimedia.org/wikipedia/commons/8/80/FRBR-Group-1-entities-and-basic-relations.svg', 'frbr.svg'),
     ('http://www.w3.org/DesignIssues/diagrams/n3/venn', 'serialization-venn.svg'),
     ('http://www.w3.org/TR/rdf-syntax/fig1dec16.png', 'rdf-example.png'),
+    ('http://protege.stanford.edu/plugins/owl/images/OWLClasses-FamilyDestination.png', 'protege.png'),
 ]
 
 BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), 'media'))
