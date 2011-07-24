@@ -72,11 +72,11 @@
 \begin_body
 
 \begin_layout Title
-Practical RDF modelling and conversion
+Introduction to RDF, and practical modelling and conversion
 \end_layout
 
 \begin_layout Author
-Alexander Dutton
+John Pybus and Alexander Dutton
 \end_layout
 
 \begin_layout Abstract
@@ -163,6 +163,131 @@ object
 triple
 \series default
 , as it contains three elements.
+\end_layout
+
+\begin_layout Standard
+There are three types of node in RDF; 
+\series bold
+URIs
+\series default
+, 
+\series bold
+blank nodes
+\series default
+, and 
+\series bold
+literals
+\series default
+.
+\end_layout
+
+\begin_layout Description
+URI A named resource (or 'thing').
+ The URI can be used to uniquely identify the resource being described.
+ URIs may appear at any position within a triple.
+\end_layout
+
+\begin_layout Description
+Blank
+\begin_inset space ~
+\end_inset
+
+node An anonymous resource ('thing').
+ Can be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+there exists something that…
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Blank nodes may be either subjects or objects (i.e.
+ not predicates).
+\end_layout
+
+\begin_layout Description
+Literal A value, such as a string, a number or a boolean truth value.
+ Literals may have datatypes or language codes attached to them.
+ Literals may only appear as objects of a statement.
+\end_layout
+
+\begin_layout Standard
+As an example, 
+\begin_inset Quotes eld
+\end_inset
+
+Alice knows someone called 'Bob'
+\begin_inset Quotes erd
+\end_inset
+
+ would be expressed as the following two pseudo-triples:
+\end_layout
+
+\begin_layout Itemize
+Alice (subject, URI), knows (predicate, URI), 
+\shape italic
+X
+\shape default
+ (object, blank node)
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+X
+\shape default
+ (subject, blank node), is called (predicate, URI), 
+\begin_inset Quotes eld
+\end_inset
+
+Bob
+\begin_inset Quotes erd
+\end_inset
+
+ (object, literal)
+\end_layout
+
+\begin_layout Standard
+Another way to express this in natural language is 
+\begin_inset Quotes eld
+\end_inset
+
+There is something such that Alice knows that thing, and that thing has
+ the name 'Bob'
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Turning this into real RDF, we might have the following, using the Turtle-based
+ notation described in section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Turtle"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+<http://example.org/person/alice> <http://xmlns.com/foaf/0.1/knows> _:x
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+_:x, <http://xmlns.com/foaf/0.1/name> 
+\begin_inset Quotes eld
+\end_inset
+
+Bob
+\begin_inset Quotes erd
+\end_inset
+
+@en
 \end_layout
 
 \begin_layout Subsection
@@ -283,6 +408,185 @@ Linked data need not be RDF, and RDF need not be linked data.
 \end_layout
 
 \begin_layout Section
+Examples of RDF datasets
+\end_layout
+
+\begin_layout Subsection
+Non-humanities
+\end_layout
+
+\begin_layout Standard
+The BBC expose a number of their sites as RDF:
+\end_layout
+
+\begin_layout Itemize
+BBC Wildlife Finder, e.g.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.bbc.co.uk/nature/life/Broadley%27s_Flat_Lizard.rdf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BBC iPlayer, e.g.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.bbc.co.uk/programmes/b006qy1y.rdf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BBC Music, e.g.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.bbc.co.uk/music/artists/ba853904-ae25-4ebb-89d6-c44cfbd71bd2.rdf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A number of universities are starting to make their data available as RDF:
+\end_layout
+
+\begin_layout Itemize
+University of Southampton, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.southampton.ac.uk/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Open University, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.open.ac.uk/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Leeds University, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.leeds.ac.uk/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Univesity of Oxford, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.ox.ac.uk/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Governments, too, are getting in on the act:
+\end_layout
+
+\begin_layout Itemize
+United Kingdom, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.gov.uk/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+United States of America, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.data.gov/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Others listed at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://opengovernmentdata.org/data/catalogues/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are also a number of large community-driven RDF datasets:
+\end_layout
+
+\begin_layout Itemize
+DBpedia (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dbpedia.org/"
+
+\end_inset
+
+); structured data extracted from Wikipedia.
+ Useful for URIs to link to.
+\end_layout
+
+\begin_layout Itemize
+GeoNames (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sws.geonames.org/"
+
+\end_inset
+
+); place data
+\end_layout
+
+\begin_layout Itemize
+Others listed at CKAN (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ckan.org/"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsection
+Humanities
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
 Choosing and developing vocabularies
 \end_layout
 
@@ -392,9 +696,9 @@ target "http://vocab.org/frbr/core.html"
 
 \begin_layout Standard
 You should use whichever makes most sense within your domain.
- If publishing your RDF for wider dissemination you may wish to model your
- data using overlapping ontologies to increase its utility to a wider range
- of consumers.
+ If publishing your RDF for wider dissemination you may also wish to model
+ your data using overlapping ontologies to increase its utility to a wider
+ range of consumers.
 \end_layout
 
 \begin_layout Subsection
@@ -432,10 +736,42 @@ target "http://www.w3.org/TR/rdf-schema/"
 \end_layout
 
 \begin_layout Description
+Web
+\begin_inset space ~
+\end_inset
+
+Ontology
+\begin_inset space ~
+\end_inset
+
+Language
+\begin_inset space ~
+\end_inset
+
+(OWL) 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/owl-ref/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
 FOAF General-purpose vocabulary for describing people and groups.
  Widely used.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset href
@@ -728,7 +1064,8 @@ pronounced
 \begin_inset space ~
 \end_inset
 
-'shock') Used for describing 'Web 2.0'-style social media communities.
+'shock') Used for describing 'Web 2.0'-style social media communities (e.g.
+ fora, microblogging).
 \begin_inset Foot
 status collapsed
 
@@ -1147,6 +1484,13 @@ rdf:RDF
 
 \begin_layout Subsection
 Turtle
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Turtle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1258,6 +1602,32 @@ foaf:name
 \begin_layout Standard
 A URI reference is enclosed in angle brackets.
  Square brackets denote an abbreviated syntax for blank (anonymous) nodes.
+\end_layout
+
+\begin_layout Standard
+For the purposes of writing down RDF terms, URIs are often enclosed in angle
+ brackets (
+\family typewriter
+<
+\family default
+, 
+\family typewriter
+>
+\family default
+)
+\family typewriter
+, blank nodes are refered to using a leading underscore and colon (e.g.
+ _:bnode), and literals are enclosed in double quotation marks (e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+hello
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Literal datatypes are identified by URIs and 
 \end_layout
 
 \begin_layout Subsection
