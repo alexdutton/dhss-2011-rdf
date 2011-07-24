@@ -408,7 +408,7 @@ Linked data need not be RDF, and RDF need not be linked data.
 \end_layout
 
 \begin_layout Section
-Examples of RDF datasets
+Examples of RDF datasets and projects
 \end_layout
 
 \begin_layout Subsection
@@ -583,7 +583,77 @@ Humanities
 \end_layout
 
 \begin_layout Standard
+CLAROS
+\begin_inset Foot
+status open
 
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.clarosnet.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ is a collaborative project to bring together classical art data from around
+ the world.
+ It uses the Erlangen implementation of the CIDOC CRM as a standardised
+ data model, and the data are available at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://data.clarosnet.org/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Google Ancient Places (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://googleancientplaces.wordpress.com/"
+
+\end_inset
+
+) is a project to extract place information from Google Books and publish
+ it as RDF.
+\end_layout
+
+\begin_layout Standard
+The STELLAR project (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://hypermedia.research.glam.ac.uk/resources/STELLAR-applications/"
+
+\end_inset
+
+) 
+\begin_inset Quotes eld
+\end_inset
+
+provides tools for non-specialist users to map and extract archaeological
+ datasets into RDF/XML conforming to the CIDOC CRM and its CRM-EH extension.
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PELAGIOS (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://pelagios-project.blogspot.com/"
+
+\end_inset
+
+) is a cross-project collaboration to improve discoverability and visualisation
+ of metadata about places in the ancient world.
 \end_layout
 
 \begin_layout Section
