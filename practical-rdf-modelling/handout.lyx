@@ -1195,7 +1195,64 @@ Finding ontologies and vocabularies
 \end_layout
 
 \begin_layout Standard
-f
+There are a number of community-maintained resources you can use to discover
+ vocabularies:
+\end_layout
+
+\begin_layout Itemize
+Schemapedia (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://schemapedia.com/"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Schemaweb (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.schemaweb.info/"
+
+\end_inset
+
+); though somewhat out of date
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "vocab.org"
+target "http://vocab.org/"
+
+\end_inset
+
+; repository for vocabularies
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "prefix.cc"
+target "http://prefix.cc/"
+
+\end_inset
+
+; lists common namespace prefixes with links to vocabularies
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "answers.semanticweb.com"
+target "http://answers.semanticweb.com/"
+
+\end_inset
+
+; a question-and-answer site with a useful archive and a knowledgeable community
+ who will respond to requests for help
 \end_layout
 
 \begin_layout Subsection
@@ -1203,7 +1260,8 @@ Creating ontologies and vocabularies
 \end_layout
 
 \begin_layout Standard
-f
+If all else fails, you should consider extending an existing ontology, or
+ creating a new one.
 \end_layout
 
 \begin_layout Section
